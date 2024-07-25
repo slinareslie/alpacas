@@ -31,7 +31,7 @@ export const getAlpacas = async () => {
       age: "3 años",
       color: "Marrón",
       description: "Le encanta correr.",
-      image: "alpaca2.jpg",
+      image: "alpaca3.jpg",
     },
     // ...otros especímenes
   ];

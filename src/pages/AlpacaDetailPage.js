@@ -8,6 +8,7 @@ import {
   CardContent,
   CardMedia,
   Button,
+  Box,
 } from "@mui/material";
 
 const AlpacaDetailPage = () => {
@@ -40,45 +41,82 @@ const AlpacaDetailPage = () => {
   return (
     <Container sx={{ marginTop: 4 }}>
       <Card>
+        <Box sx={{ textAlign: "center", padding: 2 }}>
+          <Typography
+            variant="h3"
+            component="div"
+            sx={{
+              fontWeight: "bold",
+              color: "#1976d2",
+              marginBottom: 2,
+              textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            {alpaca.name}
+          </Typography>
+        </Box>
         {imagePath && (
           <CardMedia
             component="img"
             height="300"
             image={imagePath}
             alt={alpaca.name}
-            sx={{ objectFit: "contain" }}
+            sx={{ objectFit: "contain", margin: "auto", padding: 2 }}
           />
         )}
         <CardContent>
-          <Typography variant="h4" component="div">
-            {alpaca.name}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Peso: {alpaca.weight}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Talla: {alpaca.height}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Isquion: {alpaca.isquion}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Edad: {alpaca.age}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Color: {alpaca.color}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Descripción: {alpaca.description}
-          </Typography>
-          <Button
-            variant="contained"
-            component={Link}
-            to="/"
-            sx={{ marginTop: 2 }}
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
           >
-            Volver
-          </Button>
+            <strong>Peso:</strong> {alpaca.weight}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Talla:</strong> {alpaca.height}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Isquion:</strong> {alpaca.isquion}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Edad:</strong> {alpaca.age}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Color:</strong> {alpaca.color}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 2 }}
+          >
+            <strong>Descripción:</strong> {alpaca.description}
+          </Typography>
+          <Box sx={{ textAlign: "center" }}>
+            <Button
+              variant="contained"
+              component={Link}
+              to="/"
+              sx={{ marginTop: 2 }}
+            >
+              Volver
+            </Button>
+          </Box>
         </CardContent>
       </Card>
     </Container>
