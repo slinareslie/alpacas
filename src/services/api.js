@@ -1,5 +1,4 @@
 export const getAlpacas = async () => {
-  // Simulación de llamada API
   return [
     {
       id: 1,
@@ -15,6 +14,17 @@ export const getAlpacas = async () => {
     {
       id: 2,
       name: "Alpaca 2",
+      weight: "75kg",
+      height: "1.1m",
+      isquion: "34cm",
+      age: "3 años",
+      color: "Marrón",
+      description: "Le encanta correr.",
+      image: "alpaca2.jpg",
+    },
+    {
+      id: 3,
+      name: "Alpaca 3",
       weight: "75kg",
       height: "1.1m",
       isquion: "34cm",
