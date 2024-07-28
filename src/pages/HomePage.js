@@ -26,6 +26,7 @@ const HomePage = () => {
   useEffect(() => {
     const filtered = alpacas.filter((alpaca) => {
       return alpaca[searchField]
+        .toString()
         .toLowerCase()
         .includes(searchTerm.toLowerCase());
     });
