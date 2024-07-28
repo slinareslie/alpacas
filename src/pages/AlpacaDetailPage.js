@@ -6,7 +6,6 @@ import {
   Typography,
   Card,
   CardContent,
-  CardMedia,
   Button,
   Box,
 } from "@mui/material";
@@ -14,25 +13,10 @@ import {
 const AlpacaDetailPage = () => {
   const { id } = useParams();
   const [alpaca, setAlpaca] = useState(null);
-  const [imagePath, setImagePath] = useState(null);
 
   useEffect(() => {
     getAlpacaById(id).then((data) => setAlpaca(data));
   }, [id]);
-
-  useEffect(() => {
-    if (alpaca) {
-      import(`../assets/${alpaca.image}`)
-        .then((image) => {
-          setImagePath(image.default);
-        })
-        .catch((error) => {
-          console.error(
-            `Error cargando la imagen desde la ruta: ../assets/${alpaca.image} - ${error.message}`
-          );
-        });
-    }
-  }, [alpaca]);
 
   if (!alpaca) {
     return <div>Cargando...</div>;
@@ -52,60 +36,100 @@ const AlpacaDetailPage = () => {
               textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
             }}
           >
-            {alpaca.name}
+            {alpaca.nro_arete}
           </Typography>
         </Box>
-        {imagePath && (
-          <CardMedia
-            component="img"
-            height="300"
-            image={imagePath}
-            alt={alpaca.name}
-            sx={{ objectFit: "contain", margin: "auto", padding: 2 }}
-          />
-        )}
         <CardContent>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Peso:</strong> {alpaca.weight}
+            <strong>Edad:</strong> {alpaca.edad}
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Talla:</strong> {alpaca.height}
+            <strong>Peso:</strong> {alpaca.peso}
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Isquion:</strong> {alpaca.isquion}
+            <strong>Condición Corporal:</strong> {alpaca.condicion_corporal}
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Edad:</strong> {alpaca.age}
+            <strong>Raza:</strong> {alpaca.raza}
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Color:</strong> {alpaca.color}
+            <strong>Altura Cruz:</strong> {alpaca.altura_cruz}
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
-            sx={{ marginBottom: 2 }}
+            sx={{ marginBottom: 1 }}
           >
-            <strong>Descripción:</strong> {alpaca.description}
+            <strong>Altura Grupa:</strong> {alpaca.altura_grupa}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Longitud del Cuerpo:</strong> {alpaca.long_cuerpo}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Ancho de Grupa:</strong> {alpaca.ancho_grupa}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Perímetro Torácico:</strong> {alpaca.perimetro_toracico}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Ancho de Cabeza:</strong> {alpaca.ancho_cabeza}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Largo de Cabeza:</strong> {alpaca.largo_cabeza}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Isquiones:</strong> {alpaca.isquiones}
+          </Typography>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ marginBottom: 1 }}
+          >
+            <strong>Orejas:</strong> {alpaca.orejas}
           </Typography>
           <Box sx={{ textAlign: "center" }}>
             <Button

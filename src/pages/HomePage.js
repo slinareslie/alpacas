@@ -14,7 +14,7 @@ const HomePage = () => {
   const [alpacas, setAlpacas] = useState([]);
   const [filteredAlpacas, setFilteredAlpacas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchField, setSearchField] = useState("name");
+  const [searchField, setSearchField] = useState("nro_arete");
 
   useEffect(() => {
     getAlpacas().then((data) => {
@@ -25,19 +25,9 @@ const HomePage = () => {
 
   useEffect(() => {
     const filtered = alpacas.filter((alpaca) => {
-      if (
-        searchField === "weight" ||
-        searchField === "height" ||
-        searchField === "isquion"
-      ) {
-        return alpaca[searchField]
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-      } else {
-        return alpaca[searchField]
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-      }
+      return alpaca[searchField]
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
     });
     setFilteredAlpacas(filtered);
   }, [searchTerm, searchField, alpacas]);
@@ -81,10 +71,10 @@ const HomePage = () => {
           onChange={(e) => setSearchField(e.target.value)}
           sx={{ width: "25%" }}
         >
-          <MenuItem value="name">Nombre</MenuItem>
-          <MenuItem value="weight">Peso</MenuItem>
-          <MenuItem value="height">Talla</MenuItem>
-          <MenuItem value="isquion">Isquion</MenuItem>
+          <MenuItem value="nro_arete">Nro Arete</MenuItem>
+          <MenuItem value="edad">Edad</MenuItem>
+          <MenuItem value="peso">Peso</MenuItem>
+          <MenuItem value="condicion_corporal">Condición Corporal</MenuItem>
         </TextField>
       </Box>
       <Grid container spacing={4}>
