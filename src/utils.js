@@ -1,4 +1,3 @@
-// utils.js
 const extractYearsFromAge = (ageString) => {
   const ageInYears = ageString.match(/\d+/);
   return ageInYears ? parseInt(ageInYears[0], 10) : null;

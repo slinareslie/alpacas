@@ -1,42 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Typography, Box, Button, Grid } from "@mui/material";
 import { Bar, Scatter, Pie } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { useNavigate } from "react-router-dom";
-import { getAlpacas } from "../services/api";
-import { transformAlpacaData } from "../utils";
+import useAlpacaStats from "../hooks/useAlpacaStats";
 
 Chart.register(...registerables);
 
 const StatsPage = () => {
-  const [edadData, setEdadData] = useState(null);
-  const [pesoData, setPesoData] = useState(null);
-  const [condicionCorporalVsPesoData, setCondicionCorporalVsPesoData] =
-    useState(null);
-  const [alturaCruzVsAlturaGrupaData, setAlturaCruzVsAlturaGrupaData] =
-    useState(null);
-  const [razaData, setRazaData] = useState(null);
-  const [sexoData, setSexoData] = useState(null);
-  const [pesoEdadData, setPesoEdadData] = useState(null);
+  const {
+    edadData,
+    pesoData,
+    condicionCorporalVsPesoData,
+    alturaCruzVsAlturaGrupaData,
+    razaData,
+    sexoData,
+    pesoEdadData,
+  } = useAlpacaStats();
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    getAlpacas().then((data) => {
-      const transformedData = transformAlpacaData(data);
-      setEdadData(transformedData.edadData);
-      setPesoData(transformedData.pesoData);
-      setCondicionCorporalVsPesoData(
-        transformedData.condicionCorporalVsPesoData
-      );
-      setAlturaCruzVsAlturaGrupaData(
-        transformedData.alturaCruzVsAlturaGrupaData
-      );
-      setRazaData(transformedData.razaData);
-      setSexoData(transformedData.sexoData);
-      setPesoEdadData(transformedData.pesoEdadData);
-    });
-  }, []);
 
   const chartBoxStyle = {
     height: "400px",

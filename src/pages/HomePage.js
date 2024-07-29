@@ -1,3 +1,4 @@
+// src/pages/HomePage.js
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AlpacaCard from "../components/AlpacaCard";
@@ -12,10 +13,10 @@ import {
   Button,
   ButtonGroup,
 } from "@mui/material";
+import useFilteredAlpacas from "../hooks/useFilteredAlpacas";
 
 const HomePage = () => {
   const [alpacas, setAlpacas] = useState([]);
-  const [filteredAlpacas, setFilteredAlpacas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchField, setSearchField] = useState("nro_arete");
   const [genderFilter, setGenderFilter] = useState("");
@@ -25,26 +26,15 @@ const HomePage = () => {
   useEffect(() => {
     getAlpacas().then((data) => {
       setAlpacas(data);
-      setFilteredAlpacas(data);
     });
   }, []);
 
-  useEffect(() => {
-    let filtered = alpacas.filter((alpaca) => {
-      return alpaca[searchField]
-        .toString()
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-    });
-
-    if (genderFilter) {
-      filtered = filtered.filter((alpaca) => alpaca.sexo === genderFilter);
-    }
-
-    filtered.sort((a, b) => a.nro_arete.localeCompare(b.nro_arete));
-
-    setFilteredAlpacas(filtered);
-  }, [searchTerm, searchField, genderFilter, alpacas]);
+  const sortedFilteredAlpacas = useFilteredAlpacas(
+    alpacas,
+    searchTerm,
+    searchField,
+    genderFilter
+  );
 
   return (
     <Container>
@@ -130,7 +120,7 @@ const HomePage = () => {
         </ButtonGroup>
       </Box>
       <Grid container spacing={4}>
-        {filteredAlpacas.map((alpaca) => (
+        {sortedFilteredAlpacas.map((alpaca) => (
           <Grid item key={alpaca.id} xs={12} sm={6} md={4}>
             <AlpacaCard alpaca={alpaca} />
           </Grid>
