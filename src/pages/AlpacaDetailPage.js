@@ -22,6 +22,21 @@ const AlpacaDetailPage = () => {
     return <div>Cargando...</div>;
   }
 
+  const renderAttribute = (label, value) => {
+    if (value !== null && value !== undefined) {
+      return (
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{ marginBottom: 1 }}
+        >
+          <strong>{label}:</strong> {value}
+        </Typography>
+      );
+    }
+    return null;
+  };
+
   return (
     <Container sx={{ marginTop: 4 }}>
       <Card>
@@ -40,97 +55,26 @@ const AlpacaDetailPage = () => {
           </Typography>
         </Box>
         <CardContent>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Edad:</strong> {alpaca.edad}
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Peso:</strong> {alpaca.peso} kg
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Condición Corporal:</strong> {alpaca.condicion_corporal}
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Raza:</strong> {alpaca.raza}
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Altura Cruz:</strong> {alpaca.altura_cruz} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Altura Grupa:</strong> {alpaca.altura_grupa} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Longitud del Cuerpo:</strong> {alpaca.long_cuerpo} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Ancho de Grupa:</strong> {alpaca.ancho_grupa} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Perímetro Torácico:</strong> {alpaca.perimetro_toracico} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Ancho de Cabeza:</strong> {alpaca.ancho_cabeza} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Largo de Cabeza:</strong> {alpaca.largo_cabeza} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Isquiones:</strong> {alpaca.isquiones} cm
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ marginBottom: 1 }}
-          >
-            <strong>Orejas:</strong> {alpaca.orejas} cm
-          </Typography>
+          {renderAttribute("Edad", alpaca.edad)}
+          {renderAttribute("Peso", `${alpaca.peso} kg`)}
+          {renderAttribute("Condición Corporal", alpaca.condicion_corporal)}
+          {renderAttribute("Raza", alpaca.raza)}
+          {renderAttribute("Altura Cruz", `${alpaca.altura_cruz} cm`)}
+          {renderAttribute("Altura Grupa", `${alpaca.altura_grupa} cm`)}
+          {renderAttribute("Longitud del Cuerpo", `${alpaca.long_cuerpo} cm`)}
+          {renderAttribute("Ancho de Grupa", `${alpaca.ancho_grupa} cm`)}
+          {renderAttribute(
+            "Perímetro Torácico",
+            `${alpaca.perimetro_toracico} cm`
+          )}
+          {renderAttribute("Ancho de Cabeza", `${alpaca.ancho_cabeza} cm`)}
+          {renderAttribute("Largo de Cabeza", `${alpaca.largo_cabeza} cm`)}
+          {renderAttribute("Isquiones", `${alpaca.isquiones} cm`)}
+          {renderAttribute("Orejas", `${alpaca.orejas} cm`)}
+          {renderAttribute("Largo de Cuello", alpaca.largo_cuello)}
+          {renderAttribute("Amplitud de Pecho", alpaca.amplitud_pecho)}
+          {renderAttribute("Aplomo Anterior", alpaca.aplomo_anterior)}
+          {renderAttribute("Aplomo Posterior", alpaca.aplomo_posterior)}
           <Box sx={{ textAlign: "center" }}>
             <Button
               variant="contained"
