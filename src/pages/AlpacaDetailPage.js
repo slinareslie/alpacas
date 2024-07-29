@@ -22,7 +22,7 @@ const AlpacaDetailPage = () => {
     return <div>Cargando...</div>;
   }
 
-  const renderAttribute = (label, value) => {
+  const renderAttribute = (label, value, unit = "") => {
     if (value !== null && value !== undefined) {
       return (
         <Typography
@@ -30,7 +30,7 @@ const AlpacaDetailPage = () => {
           color="text.secondary"
           sx={{ marginBottom: 1 }}
         >
-          <strong>{label}:</strong> {value}
+          <strong>{label}:</strong> {`${value} ${unit}`.trim()}
         </Typography>
       );
     }
@@ -56,21 +56,22 @@ const AlpacaDetailPage = () => {
         </Box>
         <CardContent>
           {renderAttribute("Edad", alpaca.edad)}
-          {renderAttribute("Peso", `${alpaca.peso} kg`)}
+          {renderAttribute("Peso", alpaca.peso, "kg")}
           {renderAttribute("Condición Corporal", alpaca.condicion_corporal)}
           {renderAttribute("Raza", alpaca.raza)}
-          {renderAttribute("Altura Cruz", `${alpaca.altura_cruz} cm`)}
-          {renderAttribute("Altura Grupa", `${alpaca.altura_grupa} cm`)}
-          {renderAttribute("Longitud del Cuerpo", `${alpaca.long_cuerpo} cm`)}
-          {renderAttribute("Ancho de Grupa", `${alpaca.ancho_grupa} cm`)}
+          {renderAttribute("Altura Cruz", alpaca.altura_cruz, "cm")}
+          {renderAttribute("Altura Grupa", alpaca.altura_grupa, "cm")}
+          {renderAttribute("Longitud del Cuerpo", alpaca.long_cuerpo, "cm")}
+          {renderAttribute("Ancho de Grupa", alpaca.ancho_grupa, "cm")}
           {renderAttribute(
             "Perímetro Torácico",
-            `${alpaca.perimetro_toracico} cm`
+            alpaca.perimetro_toracico,
+            "cm"
           )}
-          {renderAttribute("Ancho de Cabeza", `${alpaca.ancho_cabeza} cm`)}
-          {renderAttribute("Largo de Cabeza", `${alpaca.largo_cabeza} cm`)}
-          {renderAttribute("Isquiones", `${alpaca.isquiones} cm`)}
-          {renderAttribute("Orejas", `${alpaca.orejas} cm`)}
+          {renderAttribute("Ancho de Cabeza", alpaca.ancho_cabeza, "cm")}
+          {renderAttribute("Largo de Cabeza", alpaca.largo_cabeza, "cm")}
+          {renderAttribute("Isquiones", alpaca.isquiones, "cm")}
+          {renderAttribute("Orejas", alpaca.orejas, "cm")}
           {renderAttribute("Largo de Cuello", alpaca.largo_cuello)}
           {renderAttribute("Amplitud de Pecho", alpaca.amplitud_pecho)}
           {renderAttribute("Aplomo Anterior", alpaca.aplomo_anterior)}
