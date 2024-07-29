@@ -13,10 +13,13 @@ const AlpacaCard = ({ alpaca }) => {
           Edad: {alpaca.edad}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Peso: {alpaca.peso}
+          Peso: {alpaca.peso} kg
         </Typography>
         <Typography variant="body2" color="text.secondary">
           Condición Corporal: {alpaca.condicion_corporal}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Raza: {alpaca.raza}
         </Typography>
         <Button
           variant="contained"

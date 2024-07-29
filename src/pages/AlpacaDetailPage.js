@@ -52,7 +52,7 @@ const AlpacaDetailPage = () => {
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Peso:</strong> {alpaca.peso}
+            <strong>Peso:</strong> {alpaca.peso} kg
           </Typography>
           <Typography
             variant="body1"
@@ -73,63 +73,63 @@ const AlpacaDetailPage = () => {
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Altura Cruz:</strong> {alpaca.altura_cruz}
+            <strong>Altura Cruz:</strong> {alpaca.altura_cruz} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Altura Grupa:</strong> {alpaca.altura_grupa}
+            <strong>Altura Grupa:</strong> {alpaca.altura_grupa} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Longitud del Cuerpo:</strong> {alpaca.long_cuerpo}
+            <strong>Longitud del Cuerpo:</strong> {alpaca.long_cuerpo} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Ancho de Grupa:</strong> {alpaca.ancho_grupa}
+            <strong>Ancho de Grupa:</strong> {alpaca.ancho_grupa} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Perímetro Torácico:</strong> {alpaca.perimetro_toracico}
+            <strong>Perímetro Torácico:</strong> {alpaca.perimetro_toracico} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Ancho de Cabeza:</strong> {alpaca.ancho_cabeza}
+            <strong>Ancho de Cabeza:</strong> {alpaca.ancho_cabeza} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Largo de Cabeza:</strong> {alpaca.largo_cabeza}
+            <strong>Largo de Cabeza:</strong> {alpaca.largo_cabeza} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Isquiones:</strong> {alpaca.isquiones}
+            <strong>Isquiones:</strong> {alpaca.isquiones} cm
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: 1 }}
           >
-            <strong>Orejas:</strong> {alpaca.orejas}
+            <strong>Orejas:</strong> {alpaca.orejas} cm
           </Typography>
           <Box sx={{ textAlign: "center" }}>
             <Button

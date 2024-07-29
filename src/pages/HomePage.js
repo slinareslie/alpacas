@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AlpacaCard from "../components/AlpacaCard";
 import { getAlpacas } from "../services/api";
 import {
@@ -8,6 +9,8 @@ import {
   TextField,
   MenuItem,
   Box,
+  Button,
+  ButtonGroup,
 } from "@mui/material";
 
 const HomePage = () => {
@@ -15,6 +18,9 @@ const HomePage = () => {
   const [filteredAlpacas, setFilteredAlpacas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchField, setSearchField] = useState("nro_arete");
+  const [genderFilter, setGenderFilter] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getAlpacas().then((data) => {
@@ -24,14 +30,21 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    const filtered = alpacas.filter((alpaca) => {
+    let filtered = alpacas.filter((alpaca) => {
       return alpaca[searchField]
         .toString()
         .toLowerCase()
         .includes(searchTerm.toLowerCase());
     });
+
+    if (genderFilter) {
+      filtered = filtered.filter((alpaca) => alpaca.sexo === genderFilter);
+    }
+
+    filtered.sort((a, b) => a.nro_arete.localeCompare(b.nro_arete));
+
     setFilteredAlpacas(filtered);
-  }, [searchTerm, searchField, alpacas]);
+  }, [searchTerm, searchField, genderFilter, alpacas]);
 
   return (
     <Container>
@@ -48,6 +61,14 @@ const HomePage = () => {
         >
           Lista de Alpacas
         </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/stats")}
+          sx={{ marginTop: 2 }}
+        >
+          Ver Estadísticas
+        </Button>
       </Box>
       <Box
         sx={{
@@ -76,7 +97,37 @@ const HomePage = () => {
           <MenuItem value="edad">Edad</MenuItem>
           <MenuItem value="peso">Peso</MenuItem>
           <MenuItem value="condicion_corporal">Condición Corporal</MenuItem>
+          <MenuItem value="raza">Raza</MenuItem>
         </TextField>
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}>
+        <ButtonGroup
+          variant="contained"
+          aria-label="gender filter button group"
+        >
+          <Button
+            onClick={() => setGenderFilter("")}
+            sx={{ backgroundColor: genderFilter === "" ? "#1976d2" : "#ccc" }}
+          >
+            Todos
+          </Button>
+          <Button
+            onClick={() => setGenderFilter("hembra")}
+            sx={{
+              backgroundColor: genderFilter === "hembra" ? "#1976d2" : "#ccc",
+            }}
+          >
+            Hembra
+          </Button>
+          <Button
+            onClick={() => setGenderFilter("macho")}
+            sx={{
+              backgroundColor: genderFilter === "macho" ? "#1976d2" : "#ccc",
+            }}
+          >
+            Macho
+          </Button>
+        </ButtonGroup>
       </Box>
       <Grid container spacing={4}>
         {filteredAlpacas.map((alpaca) => (
