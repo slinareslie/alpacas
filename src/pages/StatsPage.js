@@ -54,9 +54,11 @@ const StatsPage = () => {
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Distribución de Edad
+            Peso vs Edad
           </Typography>
-          <Box sx={chartBoxStyle}>{edadData && <Bar data={edadData} />}</Box>
+          <Box sx={chartBoxStyle}>
+            {pesoEdadData && <Scatter data={pesoEdadData} />}
+          </Box>
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant="h4" sx={{ marginBottom: 2 }}>
@@ -73,6 +75,12 @@ const StatsPage = () => {
               <Scatter data={condicionCorporalVsPesoData} />
             )}
           </Box>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography variant="h4" sx={{ marginBottom: 2 }}>
+            Distribución de Edad
+          </Typography>
+          <Box sx={chartBoxStyle}>{edadData && <Bar data={edadData} />}</Box>
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant="h4" sx={{ marginBottom: 2 }}>
@@ -95,14 +103,6 @@ const StatsPage = () => {
             Distribución por Sexo
           </Typography>
           <Box sx={chartBoxStyle}>{sexoData && <Pie data={sexoData} />}</Box>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h4" sx={{ marginBottom: 2 }}>
-            Peso vs Edad
-          </Typography>
-          <Box sx={chartBoxStyle}>
-            {pesoEdadData && <Scatter data={pesoEdadData} />}
-          </Box>
         </Grid>
       </Grid>
     </Container>

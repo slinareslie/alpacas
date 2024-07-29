@@ -55,7 +55,7 @@ export const transformAlpacaData = (alpacas) => {
   };
 
   const pesoValues = alpacas.map((alpaca) => alpaca.peso);
-  const pesoHistogram = createHistogramData(pesoValues, 5);
+  const pesoHistogram = createHistogramData(pesoValues, 7);
 
   const pesoData = {
     labels: Object.keys(pesoHistogram),
@@ -71,32 +71,58 @@ export const transformAlpacaData = (alpacas) => {
   };
 
   const condicionCorporalVsPesoData = {
-    labels: ["Condición Corporal", "Peso"],
     datasets: [
       {
-        label: "Condición Corporal vs Peso",
-        data: alpacas.map((alpaca) => ({
-          x: alpaca.condicion_corporal,
-          y: alpaca.peso,
-        })),
+        label: "Hembras",
+        data: alpacas
+          .filter((alpaca) => alpaca.sexo === "hembra")
+          .map((alpaca) => ({
+            x: alpaca.condicion_corporal,
+            y: alpaca.peso,
+          })),
         backgroundColor: "rgba(75,192,192,0.4)",
         borderColor: "rgba(75,192,192,1)",
+        borderWidth: 1,
+      },
+      {
+        label: "Machos",
+        data: alpacas
+          .filter((alpaca) => alpaca.sexo === "macho")
+          .map((alpaca) => ({
+            x: alpaca.condicion_corporal,
+            y: alpaca.peso,
+          })),
+        backgroundColor: "rgba(192,75,75,0.4)",
+        borderColor: "rgba(192,75,75,1)",
         borderWidth: 1,
       },
     ],
   };
 
   const alturaCruzVsAlturaGrupaData = {
-    labels: ["Altura Cruz", "Altura Grupa"],
     datasets: [
       {
-        label: "Altura Cruz vs Altura Grupa",
-        data: alpacas.map((alpaca) => ({
-          x: alpaca.altura_cruz,
-          y: alpaca.altura_grupa,
-        })),
+        label: "Hembras",
+        data: alpacas
+          .filter((alpaca) => alpaca.sexo === "hembra")
+          .map((alpaca) => ({
+            x: alpaca.altura_cruz,
+            y: alpaca.altura_grupa,
+          })),
         backgroundColor: "rgba(75,192,192,0.4)",
         borderColor: "rgba(75,192,192,1)",
+        borderWidth: 1,
+      },
+      {
+        label: "Machos",
+        data: alpacas
+          .filter((alpaca) => alpaca.sexo === "macho")
+          .map((alpaca) => ({
+            x: alpaca.altura_cruz,
+            y: alpaca.altura_grupa,
+          })),
+        backgroundColor: "rgba(192,75,75,0.4)",
+        borderColor: "rgba(192,75,75,1)",
         borderWidth: 1,
       },
     ],
@@ -145,7 +171,7 @@ export const transformAlpacaData = (alpacas) => {
         backgroundColor: "rgba(75,192,192,0.4)",
         borderColor: "rgba(75,192,192,1)",
         borderWidth: 1,
-        pointBackgroundColor: "rgba(75,192,192,0.4)", // Azul
+        pointBackgroundColor: "rgba(75,192,192,0.4)",
       },
       {
         label: "Machos",
@@ -153,7 +179,7 @@ export const transformAlpacaData = (alpacas) => {
         backgroundColor: "rgba(192,75,75,0.4)",
         borderColor: "rgba(192,75,75,1)",
         borderWidth: 1,
-        pointBackgroundColor: "rgba(192,75,75,0.4)", // Rojo
+        pointBackgroundColor: "rgba(192,75,75,0.4)",
       },
     ],
   };
