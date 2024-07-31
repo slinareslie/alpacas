@@ -31,11 +31,15 @@ const AlpacaDetailPage = () => {
     return <div>Cargando...</div>;
   }
 
-  const datosCorporales = [
+  const datos = [
     { label: "Edad", value: alpaca.edad },
     { label: "Peso", value: alpaca.peso, unit: "kg" },
     { label: "Condición Corporal", value: alpaca.condicion_corporal },
     { label: "Raza", value: alpaca.raza },
+    { label: "Sexo", value: alpaca.sexo },
+  ];
+
+  const medidasCorporales = [
     { label: "Altura Cruz", value: alpaca.altura_cruz, unit: "cm" },
     { label: "Altura Grupa", value: alpaca.altura_grupa, unit: "cm" },
     { label: "Longitud del Cuerpo", value: alpaca.long_cuerpo, unit: "cm" },
@@ -47,16 +51,11 @@ const AlpacaDetailPage = () => {
     },
     { label: "Ancho de Cabeza", value: alpaca.ancho_cabeza, unit: "cm" },
     { label: "Largo de Cabeza", value: alpaca.largo_cabeza, unit: "cm" },
+    { label: "Isquiones", value: alpaca.isquiones, unit: "cm" },
     { label: "Orejas", value: alpaca.orejas, unit: "cm" },
-    { label: "Largo de Cuello", value: alpaca.largo_cuello, unit: "cm" },
-    { label: "Amplitud de Pecho", value: alpaca.amplitud_pecho, unit: "cm" },
-    { label: "Aplomo Anterior", value: alpaca.aplomo_anterior},
-    { label: "Aplomo Posterior", value: alpaca.aplomo_posterior},
-    { label: "Sexo", value: alpaca.sexo },
   ];
 
   const valorNutricional = [
-    { label: "Estado Fisiológico", value: alpaca.estado_fisiologico },
     { label: "Materia Seca", value: alpaca.materia_seca, unit: "kg/día" },
     { label: "Proteína Cruda", value: alpaca.proteina_cruda, unit: "%" },
     { label: "Energía", value: alpaca.energia, unit: "Mcal/día" },
@@ -148,12 +147,17 @@ const AlpacaDetailPage = () => {
         <CardContent>
           {isMobile ? (
             <>
-              {renderAttributesForMobile("Datos Corporales", datosCorporales)}
+              {renderAttributesForMobile("Datos", datos)}
+              {renderAttributesForMobile(
+                "Medidas Corporales",
+                medidasCorporales
+              )}
               {renderAttributesForMobile("Valor Nutricional", valorNutricional)}
             </>
           ) : (
             <>
-              {renderTable("Datos Corporales", datosCorporales)}
+              {renderTable("Datos", datos)}
+              {renderTable("Medidas Corporales", medidasCorporales)}
               {renderTable("Valor Nutricional", valorNutricional)}
             </>
           )}
