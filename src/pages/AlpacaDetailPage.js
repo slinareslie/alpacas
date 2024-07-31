@@ -15,11 +15,13 @@ import {
   TableHead,
   TableRow,
   Paper,
+  useMediaQuery,
 } from "@mui/material";
 
 const AlpacaDetailPage = () => {
   const { id } = useParams();
   const [alpaca, setAlpaca] = useState(null);
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     getAlpacaById(id).then((data) => setAlpaca(data));
@@ -46,22 +48,22 @@ const AlpacaDetailPage = () => {
     { label: "Ancho de Cabeza", value: alpaca.ancho_cabeza, unit: "cm" },
     { label: "Largo de Cabeza", value: alpaca.largo_cabeza, unit: "cm" },
     { label: "Orejas", value: alpaca.orejas, unit: "cm" },
-    { label: "Largo de Cuello", value: alpaca.largo_cuello },
-    { label: "Amplitud de Pecho", value: alpaca.amplitud_pecho },
-    { label: "Aplomo Anterior", value: alpaca.aplomo_anterior },
-    { label: "Aplomo Posterior", value: alpaca.aplomo_posterior },
+    { label: "Largo de Cuello", value: alpaca.largo_cuello, unit: "cm" },
+    { label: "Amplitud de Pecho", value: alpaca.amplitud_pecho, unit: "cm" },
+    { label: "Aplomo Anterior", value: alpaca.aplomo_anterior},
+    { label: "Aplomo Posterior", value: alpaca.aplomo_posterior},
     { label: "Sexo", value: alpaca.sexo },
   ];
 
   const valorNutricional = [
     { label: "Estado Fisiológico", value: alpaca.estado_fisiologico },
-    { label: "Materia Seca", value: alpaca.materia_seca },
-    { label: "Proteína Cruda", value: alpaca.proteina_cruda },
-    { label: "Energía", value: alpaca.energia },
-    { label: "Calcio", value: alpaca.calcio },
-    { label: "Fósforo", value: alpaca.fosforo },
-    { label: "Selenio", value: alpaca.selenio },
-    { label: "Agua", value: alpaca.agua },
+    { label: "Materia Seca", value: alpaca.materia_seca, unit: "kg/día" },
+    { label: "Proteína Cruda", value: alpaca.proteina_cruda, unit: "%" },
+    { label: "Energía", value: alpaca.energia, unit: "Mcal/día" },
+    { label: "Calcio", value: alpaca.calcio, unit: "g/día" },
+    { label: "Fósforo", value: alpaca.fosforo, unit: "g/día" },
+    { label: "Selenio", value: alpaca.selenio, unit: "mg/día" },
+    { label: "Agua", value: alpaca.agua, unit: "litros/día" },
   ];
 
   const renderTable = (title, attributes) => (
@@ -98,6 +100,34 @@ const AlpacaDetailPage = () => {
     </TableContainer>
   );
 
+  const renderAttributesForMobile = (title, attributes) => (
+    <Box sx={{ marginBottom: 4 }}>
+      <Typography variant="h6" sx={{ padding: 2 }}>
+        {title}
+      </Typography>
+      {attributes
+        .filter((attr) => attr.value !== null && attr.value !== undefined)
+        .map((attr) => (
+          <Box
+            key={attr.label}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              padding: 1,
+              borderBottom: "1px solid #ddd",
+            }}
+          >
+            <Typography variant="body1" color="text.secondary">
+              <strong>{attr.label}</strong>
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {`${attr.value} ${attr.unit || ""}`.trim()}
+            </Typography>
+          </Box>
+        ))}
+    </Box>
+  );
+
   return (
     <Container sx={{ marginTop: 4 }}>
       <Card>
@@ -116,8 +146,17 @@ const AlpacaDetailPage = () => {
           </Typography>
         </Box>
         <CardContent>
-          {renderTable("Datos Corporales", datosCorporales)}
-          {renderTable("Valor Nutricional", valorNutricional)}
+          {isMobile ? (
+            <>
+              {renderAttributesForMobile("Datos Corporales", datosCorporales)}
+              {renderAttributesForMobile("Valor Nutricional", valorNutricional)}
+            </>
+          ) : (
+            <>
+              {renderTable("Datos Corporales", datosCorporales)}
+              {renderTable("Valor Nutricional", valorNutricional)}
+            </>
+          )}
           <Box sx={{ textAlign: "center" }}>
             <Button
               variant="contained"
