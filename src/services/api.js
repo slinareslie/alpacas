@@ -1011,6 +1011,14 @@ export const getAlpacas = async () => {
       aplomo_anterior: "Normal",
       aplomo_posterior: "Patizambo",
       sexo: "macho",
+      estado_fisiologico: null,
+      materia_seca: null,
+      proteina_cruda: null,
+      energia: null,
+      calcio: null,
+      fosforo: null,
+      selenio: null,
+      agua: null,
     },
   ];
 };

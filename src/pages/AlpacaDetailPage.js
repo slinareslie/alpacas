@@ -8,6 +8,13 @@ import {
   CardContent,
   Button,
   Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
 } from "@mui/material";
 
 const AlpacaDetailPage = () => {
@@ -22,20 +29,74 @@ const AlpacaDetailPage = () => {
     return <div>Cargando...</div>;
   }
 
-  const renderAttribute = (label, value, unit = "") => {
-    if (value !== null && value !== undefined) {
-      return (
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          sx={{ marginBottom: 1 }}
-        >
-          <strong>{label}:</strong> {`${value} ${unit}`.trim()}
-        </Typography>
-      );
-    }
-    return null;
-  };
+  const datosCorporales = [
+    { label: "Edad", value: alpaca.edad },
+    { label: "Peso", value: alpaca.peso, unit: "kg" },
+    { label: "Condición Corporal", value: alpaca.condicion_corporal },
+    { label: "Raza", value: alpaca.raza },
+    { label: "Altura Cruz", value: alpaca.altura_cruz, unit: "cm" },
+    { label: "Altura Grupa", value: alpaca.altura_grupa, unit: "cm" },
+    { label: "Longitud del Cuerpo", value: alpaca.long_cuerpo, unit: "cm" },
+    { label: "Ancho de Grupa", value: alpaca.ancho_grupa, unit: "cm" },
+    {
+      label: "Perímetro Torácico",
+      value: alpaca.perimetro_toracico,
+      unit: "cm",
+    },
+    { label: "Ancho de Cabeza", value: alpaca.ancho_cabeza, unit: "cm" },
+    { label: "Largo de Cabeza", value: alpaca.largo_cabeza, unit: "cm" },
+    { label: "Orejas", value: alpaca.orejas, unit: "cm" },
+    { label: "Largo de Cuello", value: alpaca.largo_cuello },
+    { label: "Amplitud de Pecho", value: alpaca.amplitud_pecho },
+    { label: "Aplomo Anterior", value: alpaca.aplomo_anterior },
+    { label: "Aplomo Posterior", value: alpaca.aplomo_posterior },
+    { label: "Sexo", value: alpaca.sexo },
+  ];
+
+  const valorNutricional = [
+    { label: "Estado Fisiológico", value: alpaca.estado_fisiologico },
+    { label: "Materia Seca", value: alpaca.materia_seca },
+    { label: "Proteína Cruda", value: alpaca.proteina_cruda },
+    { label: "Energía", value: alpaca.energia },
+    { label: "Calcio", value: alpaca.calcio },
+    { label: "Fósforo", value: alpaca.fosforo },
+    { label: "Selenio", value: alpaca.selenio },
+    { label: "Agua", value: alpaca.agua },
+  ];
+
+  const renderTable = (title, attributes) => (
+    <TableContainer component={Paper} sx={{ marginBottom: 4 }}>
+      <Typography variant="h6" sx={{ padding: 2 }}>
+        {title}
+      </Typography>
+      <Table aria-label={`${title} table`}>
+        <TableHead>
+          <TableRow>
+            <TableCell>Atributo</TableCell>
+            <TableCell align="right">Valor</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {attributes
+            .filter((attr) => attr.value !== null && attr.value !== undefined)
+            .map((attr) => (
+              <TableRow key={attr.label}>
+                <TableCell component="th" scope="row">
+                  <Typography variant="body1" color="text.secondary">
+                    <strong>{attr.label}</strong>
+                  </Typography>
+                </TableCell>
+                <TableCell align="right">
+                  <Typography variant="body1" color="text.secondary">
+                    {`${attr.value} ${attr.unit || ""}`.trim()}
+                  </Typography>
+                </TableCell>
+              </TableRow>
+            ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
 
   return (
     <Container sx={{ marginTop: 4 }}>
@@ -55,27 +116,8 @@ const AlpacaDetailPage = () => {
           </Typography>
         </Box>
         <CardContent>
-          {renderAttribute("Edad", alpaca.edad)}
-          {renderAttribute("Peso", alpaca.peso, "kg")}
-          {renderAttribute("Condición Corporal", alpaca.condicion_corporal)}
-          {renderAttribute("Raza", alpaca.raza)}
-          {renderAttribute("Altura Cruz", alpaca.altura_cruz, "cm")}
-          {renderAttribute("Altura Grupa", alpaca.altura_grupa, "cm")}
-          {renderAttribute("Longitud del Cuerpo", alpaca.long_cuerpo, "cm")}
-          {renderAttribute("Ancho de Grupa", alpaca.ancho_grupa, "cm")}
-          {renderAttribute(
-            "Perímetro Torácico",
-            alpaca.perimetro_toracico,
-            "cm"
-          )}
-          {renderAttribute("Ancho de Cabeza", alpaca.ancho_cabeza, "cm")}
-          {renderAttribute("Largo de Cabeza", alpaca.largo_cabeza, "cm")}
-          {renderAttribute("Isquiones", alpaca.isquiones, "cm")}
-          {renderAttribute("Orejas", alpaca.orejas, "cm")}
-          {renderAttribute("Largo de Cuello", alpaca.largo_cuello)}
-          {renderAttribute("Amplitud de Pecho", alpaca.amplitud_pecho)}
-          {renderAttribute("Aplomo Anterior", alpaca.aplomo_anterior)}
-          {renderAttribute("Aplomo Posterior", alpaca.aplomo_posterior)}
+          {renderTable("Datos Corporales", datosCorporales)}
+          {renderTable("Valor Nutricional", valorNutricional)}
           <Box sx={{ textAlign: "center" }}>
             <Button
               variant="contained"
