@@ -13,6 +13,8 @@ import {
   ButtonGroup,
 } from "@mui/material";
 import useFilteredAlpacas from "../hooks/useFilteredAlpacas";
+import backgroundImage from "../assets/texture.jpg";
+import bannerImage from "../assets/banner.jpg";
 
 const HomePage = () => {
   const [alpacas, setAlpacas] = useState([]);
@@ -36,16 +38,101 @@ const HomePage = () => {
   );
 
   return (
-    <Container>
-      <Box sx={{ textAlign: "center", margin: 4 }}>
+    <Container
+      sx={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        padding: 4,
+        color: "#fff",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Box
+        sx={{
+          display: { xs: "none", sm: "block" },
+          position: "relative",
+          width: "100%",
+          height: "50vh",
+          borderRadius: "16px",
+          overflow: "hidden",
+          mb: 4,
+        }}
+      >
+        <img
+          src={bannerImage}
+          alt="Banner"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "16px",
+            display: "block",
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "#fff",
+            textAlign: "center",
+            padding: 2,
+            borderRadius: "16px",
+          }}
+        >
+          <Typography
+            variant="h2"
+            component="div"
+            sx={{
+              fontWeight: "bold",
+              color: "#fff",
+              marginBottom: 2,
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+              fontSize: { xs: "2.5rem", sm: "2rem", md: "2.5rem" },
+            }}
+          >
+            Lista de Alpacas
+          </Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => navigate("/stats")}
+            sx={{ marginTop: 2 }}
+          >
+            Ver Estadísticas
+          </Button>
+        </Box>
+      </Box>
+
+      <Box
+        sx={{
+          display: { xs: "flex", sm: "none" },
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          mb: 4,
+        }}
+      >
         <Typography
-          variant="h2"
+          variant="h4"
           component="div"
           sx={{
             fontWeight: "bold",
             color: "#1976d2",
             marginBottom: 2,
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+            fontSize: { xs: "3rem", sm: "2rem" },
           }}
         >
           Lista de Alpacas
@@ -59,12 +146,15 @@ const HomePage = () => {
           Ver Estadísticas
         </Button>
       </Box>
+
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "center",
           gap: 2,
           marginBottom: 4,
+          width: "100%",
         }}
       >
         <TextField
@@ -72,7 +162,9 @@ const HomePage = () => {
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          sx={{ width: "50%" }}
+          sx={{
+            width: { xs: "100%", sm: "50%" },
+          }}
         />
         <TextField
           select
@@ -80,7 +172,9 @@ const HomePage = () => {
           variant="outlined"
           value={searchField}
           onChange={(e) => setSearchField(e.target.value)}
-          sx={{ width: "25%" }}
+          sx={{
+            width: { xs: "100%", sm: "25%" },
+          }}
         >
           <MenuItem value="nro_arete">Nro Arete</MenuItem>
           <MenuItem value="edad">Edad</MenuItem>
@@ -89,6 +183,7 @@ const HomePage = () => {
           <MenuItem value="raza">Raza</MenuItem>
         </TextField>
       </Box>
+
       <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}>
         <ButtonGroup
           variant="contained"
@@ -118,6 +213,7 @@ const HomePage = () => {
           </Button>
         </ButtonGroup>
       </Box>
+
       <Grid container spacing={4}>
         {sortedFilteredAlpacas.map((alpaca) => (
           <Grid item key={alpaca.id} xs={12} sm={6} md={4}>
