@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link as RouterLink } from "react-router-dom";
 import { getAlpacaById } from "../services/api";
 import {
   Container,
@@ -16,6 +16,7 @@ import {
   TableRow,
   Paper,
   useMediaQuery,
+  Link,
 } from "@mui/material";
 
 const AlpacaDetailPage = () => {
@@ -164,7 +165,7 @@ const AlpacaDetailPage = () => {
           <Box sx={{ textAlign: "center" }}>
             <Button
               variant="contained"
-              component={Link}
+              component={RouterLink}
               to="/"
               sx={{ marginTop: 2 }}
             >
@@ -173,6 +174,7 @@ const AlpacaDetailPage = () => {
           </Box>
         </CardContent>
       </Card>
+
       <Box
         sx={{
           marginTop: "auto",
@@ -185,20 +187,69 @@ const AlpacaDetailPage = () => {
         }}
       >
         <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-          Autores:
+          <RouterLink
+            to="/about"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Acerca de Nosotros
+          </RouterLink>
         </Typography>
-        <Typography variant="body1">
-          Milene Dariela Veliz Cosi 2021-110036
-        </Typography>
-        <Typography variant="body1">
-          Guini Doaiva Lopez Velarde 2021-110041
-        </Typography>
-        <Typography variant="body1">
-          Massiel Tamara Choquecota Mamani 2021-110005
-        </Typography>
-        <Typography variant="body1">
-          Claudia Rocio Llangato Rosas 2021-110069
-        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 2,
+          }}
+        >
+          <Box sx={{ flex: "1 1 45%", textAlign: "center" }}>
+            <Typography variant="body1">Milene Dariela Veliz Cosi</Typography>
+            <Typography variant="body1">
+              <Link href="mailto:mvelizc@unjbg.edu.pe" color="inherit">
+                mvelizc@unjbg.edu.pe
+              </Link>
+            </Typography>
+            <Typography variant="body1">
+              <Link
+                href="https://www.linkedin.com/in/milene-veliz-305524295/"
+                color="inherit"
+              >
+                LinkedIn
+              </Link>
+            </Typography>
+          </Box>
+
+          <Box sx={{ flex: "1 1 45%", textAlign: "center" }}>
+            <Typography variant="body1">Guini Doaiva Lopez Velarde</Typography>
+            <Typography variant="body1">
+              <Link href="mailto:gdlopezv@unjbg.edu.pe" color="inherit">
+                gdlopezv@unjbg.edu.pe
+              </Link>
+            </Typography>
+          </Box>
+
+          <Box sx={{ flex: "1 1 45%", textAlign: "center" }}>
+            <Typography variant="body1">
+              Massiel Tamara Choquecota Mamani
+            </Typography>
+            <Typography variant="body1">
+              <Link href="mailto:mchoquecotam@unjbg.edu.pe" color="inherit">
+                mchoquecotam@unjbg.edu.pe
+              </Link>
+            </Typography>
+          </Box>
+
+          <Box sx={{ flex: "1 1 45%", textAlign: "center" }}>
+            <Typography variant="body1">
+              Claudia Rocio Llangato Rosas
+            </Typography>
+            <Typography variant="body1">
+              <Link href="mailto:crllangator@unjbg.edu.pe" color="inherit">
+                crllangator@unjbg.edu.pe
+              </Link>
+            </Typography>
+          </Box>
+        </Box>
       </Box>
     </Container>
   );
