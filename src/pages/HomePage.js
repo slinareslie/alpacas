@@ -13,7 +13,6 @@ import {
   ButtonGroup,
 } from "@mui/material";
 import useFilteredAlpacas from "../hooks/useFilteredAlpacas";
-import backgroundImage from "../assets/texture.jpg";
 import bannerImage from "../assets/banner.jpg";
 
 const HomePage = () => {
@@ -40,15 +39,15 @@ const HomePage = () => {
   return (
     <Container
       sx={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundColor: "#f5f5dc", // Beige claro
         minHeight: "100vh",
-        padding: 4,
-        color: "#fff",
+        padding: 0, // Eliminar padding para evitar bordes blancos
+        color: "#333", // Color de texto más oscuro para contraste
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        width: "100%", // Asegura que el contenedor ocupe todo el ancho disponible
+        boxSizing: "border-box", // Incluye padding y border en el ancho y alto del contenedor
       }}
     >
       <Box
@@ -99,7 +98,7 @@ const HomePage = () => {
               color: "#fff",
               marginBottom: 2,
               textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-              fontSize: { xs: "2.5rem", sm: "2rem", md: "2.5rem" },
+              fontSize: { xs: "4rem", sm: "3.5rem", md: "4rem" }, // Aumentar el tamaño del título
             }}
           >
             Lista de Alpacas
@@ -125,14 +124,14 @@ const HomePage = () => {
         }}
       >
         <Typography
-          variant="h4"
+          variant="h3"
           component="div"
           sx={{
             fontWeight: "bold",
             color: "#1976d2",
             marginBottom: 2,
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-            fontSize: { xs: "3rem", sm: "2rem" },
+            fontSize: { xs: "4rem", sm: "2.5rem" }, // Título más grande en pantallas pequeñas
           }}
         >
           Lista de Alpacas
