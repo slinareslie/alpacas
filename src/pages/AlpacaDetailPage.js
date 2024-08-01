@@ -173,6 +173,33 @@ const AlpacaDetailPage = () => {
           </Box>
         </CardContent>
       </Card>
+      <Box
+        sx={{
+          marginTop: "auto",
+          padding: 2,
+          backgroundColor: "#1976d2",
+          width: "100%",
+          textAlign: "center",
+          borderRadius: "16px",
+          color: "#fff",
+        }}
+      >
+        <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          Autores:
+        </Typography>
+        <Typography variant="body1">
+          Milene Dariela Veliz Cosi 2021-110036
+        </Typography>
+        <Typography variant="body1">
+          Guini Doaiva Lopez Velarde 2021-110041
+        </Typography>
+        <Typography variant="body1">
+          Massiel Tamara Choquecota Mamani 2021-110005
+        </Typography>
+        <Typography variant="body1">
+          Claudia Rocio Llangato Rosas 2021-110069
+        </Typography>
+      </Box>
     </Container>
   );
 };

@@ -39,15 +39,15 @@ const HomePage = () => {
   return (
     <Container
       sx={{
-        backgroundColor: "#f5f5dc", // Beige claro
+        backgroundColor: "#f5f5dc",
         minHeight: "100vh",
-        padding: 0, // Eliminar padding para evitar bordes blancos
-        color: "#333", // Color de texto más oscuro para contraste
+        padding: 0,
+        color: "#333",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "100%", // Asegura que el contenedor ocupe todo el ancho disponible
-        boxSizing: "border-box", // Incluye padding y border en el ancho y alto del contenedor
+        width: "100%",
+        boxSizing: "border-box",
       }}
     >
       <Box
@@ -98,10 +98,10 @@ const HomePage = () => {
               color: "#fff",
               marginBottom: 2,
               textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-              fontSize: { xs: "4rem", sm: "3.5rem", md: "4rem" }, // Aumentar el tamaño del título
+              fontSize: { xs: "4rem", sm: "3.5rem", md: "4rem" },
             }}
           >
-            Lista de Alpacas
+            ALPACAPP
           </Typography>
           <Button
             variant="contained"
@@ -131,7 +131,7 @@ const HomePage = () => {
             color: "#1976d2",
             marginBottom: 2,
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-            fontSize: { xs: "4rem", sm: "2.5rem" }, // Título más grande en pantallas pequeñas
+            fontSize: { xs: "4rem", sm: "2.5rem" },
           }}
         >
           Lista de Alpacas
@@ -220,6 +220,33 @@ const HomePage = () => {
           </Grid>
         ))}
       </Grid>
+      <Box
+        sx={{
+          marginTop: "auto",
+          padding: 2,
+          backgroundColor: "#1976d2",
+          width: "100%",
+          textAlign: "center",
+          borderRadius: "16px",
+          color: "#fff",
+        }}
+      >
+        <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+          Autores:
+        </Typography>
+        <Typography variant="body1">
+          Milene Dariela Veliz Cosi 2021-110036
+        </Typography>
+        <Typography variant="body1">
+          Guini Doaiva Lopez Velarde 2021-110041
+        </Typography>
+        <Typography variant="body1">
+          Massiel Tamara Choquecota Mamani 2021-110005
+        </Typography>
+        <Typography variant="body1">
+          Claudia Rocio Llangato Rosas 2021-110069
+        </Typography>
+      </Box>
     </Container>
   );
 };
