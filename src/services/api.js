@@ -29,6 +29,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 2,
@@ -59,6 +62,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 3,
@@ -89,6 +95,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 4,
@@ -119,6 +128,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 5,
@@ -149,6 +161,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 6,
@@ -179,6 +194,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 7,
@@ -209,6 +227,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 8,
@@ -239,6 +260,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 9,
@@ -269,6 +293,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 10,
@@ -299,6 +326,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 11,
@@ -329,6 +359,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 12,
@@ -359,6 +392,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 13,
@@ -389,6 +425,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 14,
@@ -419,6 +458,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 15,
@@ -449,6 +491,9 @@ export const getAlpacas = async () => {
       fosforo: "6 - 7",
       selenio: "0.6 - 1.2",
       agua: "6 - 8",
+      heno_de_alfalfa: "0.70 - 0.90",
+      heno_de_avena: "0.70 - 0.90",
+      concentrado: "0.35 - 0.45",
     },
     {
       id: 16,
@@ -479,6 +524,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 17,
@@ -509,6 +557,9 @@ export const getAlpacas = async () => {
       fosforo: "3 - 4",
       selenio: "0.3 - 0.6",
       agua: "2 - 3",
+      heno_de_alfalfa: "0.20 - 0.30",
+      heno_de_avena: "0.20 - 0.30",
+      concentrado: "0.10 - 0.15",
     },
     {
       id: 18,
@@ -539,6 +590,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 19,
@@ -569,6 +623,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 20,
@@ -599,6 +656,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 21,
@@ -629,6 +689,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 22,
@@ -659,6 +722,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 23,
@@ -689,6 +755,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 24,
@@ -719,6 +788,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 25,
@@ -749,6 +821,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 26,
@@ -779,6 +854,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 27,
@@ -809,6 +887,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 28,
@@ -839,6 +920,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 29,
@@ -869,6 +953,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 30,
@@ -899,6 +986,9 @@ export const getAlpacas = async () => {
       fosforo: "2 - 3",
       selenio: "0.2 - 0.5",
       agua: "1 - 2",
+      heno_de_alfalfa: "0.05 - 0.10",
+      heno_de_avena: "0.05 - 0.10",
+      concentrado: "0.025 - 0.05",
     },
     {
       id: 31,
@@ -929,6 +1019,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 32,
@@ -959,6 +1052,9 @@ export const getAlpacas = async () => {
       fosforo: "4 - 5",
       selenio: "0.4 - 0.8",
       agua: "3 - 4",
+      heno_de_alfalfa: "0.30 - 0.40",
+      heno_de_avena: "0.30 - 0.40",
+      concentrado: "0.15 - 0.20",
     },
     {
       id: 33,
@@ -989,6 +1085,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 34,
@@ -1019,6 +1118,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 35,
@@ -1049,6 +1151,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 36,
@@ -1079,6 +1184,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 37,
@@ -1109,6 +1217,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 38,
@@ -1139,6 +1250,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 39,
@@ -1169,6 +1283,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 40,
@@ -1199,6 +1316,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 41,
@@ -1229,6 +1349,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 42,
@@ -1259,6 +1382,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 43,
@@ -1289,6 +1415,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.50 - 0.70",
+      heno_de_avena: "0.50 - 0.70",
+      concentrado: "0.25 - 0.35",
     },
     {
       id: 44,
@@ -1319,6 +1448,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 45,
@@ -1349,6 +1481,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "5 - 7",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
     {
       id: 46,
@@ -1379,6 +1514,9 @@ export const getAlpacas = async () => {
       fosforo: "5 - 6",
       selenio: "0.5 - 1.0",
       agua: "4 - 5",
+      heno_de_alfalfa: "0.40 - 0.50",
+      heno_de_avena: "0.40 - 0.50",
+      concentrado: "0.20 - 0.25",
     },
   ];
 };

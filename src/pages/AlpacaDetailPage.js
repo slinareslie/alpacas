@@ -57,6 +57,9 @@ const AlpacaDetailPage = () => {
   ];
 
   const valorNutricional = [
+    { label: "Heno de Alfalfa", value: alpaca.heno_de_alfalfa, unit: "kg/día" },
+    { label: "Heno de Avena", value: alpaca.heno_de_avena, unit: "kg/día" },
+    { label: "Concentrado", value: alpaca.concentrado, unit: "kg/día" },
     { label: "Materia Seca", value: alpaca.materia_seca, unit: "kg/día" },
     { label: "Proteína Cruda", value: alpaca.proteina_cruda, unit: "%" },
     { label: "Energía", value: alpaca.energia, unit: "Mcal/día" },
